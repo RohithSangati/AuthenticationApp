@@ -41,6 +41,11 @@ def register(request):
             return redirect('register')
     else:
         return render(request,'register.html')
+    
+    
+    
+    
+    
 
 def login(request):
     if request.method == 'POST':
@@ -57,6 +62,10 @@ def login(request):
         return render(request,'login.html')
 
 
+    
+    
+    
+    
 def logout(request):
     auth.logout(request)
     return redirect('/')
