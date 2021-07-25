@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Authenticator App</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'styles/home.css' %}" />
+</head>
+
+<body class='home' style="background-image: url(static/images/home.jpg);">
+    <header class='navbar'>
+        <div class='header'>
+            <div class='logocontainer'>
+                <img src="{%  static 'images/lock.png' %}" >
+                <h1>Authenticator App</h1>
+            </div>
+            {% if user.is_authenticated %}
+                <div class='auth'>
+                    <a href='/'>Hello,{{user.first_name}}</a>
+                    <a href='logout'>Logout</a>
+                </div>
+            {% else %}
+                <div class='auth'>
+                    <a href='register'>Register</a>
+                    <a href='login'>Login</a>
+                </div>
+            {% endif %}
+            
+        </div>
+    </header>
+    <div class='div'>
+        {%  if user.is_authenticated %}
+            <p>Hello,{{user.first_name}}!</p>
+        {% else %}
+            <p>Hello,User!</p>
+        {% endif %}
+        <p>Welcome to Authenticator App</p>
+    </div>>
+</body>
+
+</html>

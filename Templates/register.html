@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Authenticator App</title>
+    <link type='text/css' rel='stylesheet' href="{% static 'styles/home.css' %}">
+</head>
+
+<body class="registerbody" >
+    <form action='register' method='post' autocomplete="off">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <tr>
+                        <td>
+                            <p class=login>Register</p>
+                        </td>
+                    </tr>
+                </tr>
+                <tr>
+                    <td><input type='text' name='first_name' placeholder="First Name"></td>
+                </tr>
+                <tr>
+                    <td><input type='text' name='last_name' placeholder="Last Name"></td>
+                </tr>
+                <tr>
+                    <td><input type='text' name='username' placeholder="User Name"></td>
+                </tr>
+                <tr>
+                    <td><input type='email' name='email' placeholder="Email Address"></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name='password1' placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name='password2' placeholder="Confirm password"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit"></td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </form>
+    <div class='msg' style="color:red">
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
