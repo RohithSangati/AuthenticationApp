@@ -1,5 +1,5 @@
 # AuthenticationApp
-Authentication App using Django
+It is an Authentication App made with Django and MySql database.It allows th user to Register,Login and Logout from the application.
 
 
 
